@@ -1,6 +1,3 @@
-import copy
-
-
 class FieldProp(object):
     def __init__(self, ttype, required=False):
         self.ttype = ttype
@@ -94,4 +91,18 @@ class WebEntry(Entry):
         'email': FieldProp(str),
         'sec_question': FieldProp(dict),
         'alt_email': FieldProp(list),
+    }
+
+
+class MedicalEntry(Entry):
+
+    KNOWN_FIELDS = {
+        'name': FieldProp(str, True),
+        'account': FieldProp(str, True),
+        'passwd': FieldProp(str, True),
+        'email': FieldProp(str),
+        'alt_email': FieldProp(list),
+        'accountn': FieldProp(str),
+        'url': FieldProp(list),
+        'sec_question': FieldProp(dict),
     }
